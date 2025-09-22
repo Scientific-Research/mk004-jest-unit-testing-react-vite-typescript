@@ -9,7 +9,7 @@ import * as qstr from './qstr';
  */
 export const capitalizeFirstLetter = (line: string) => {
 	return line.charAt(0).toUpperCase() + line.slice(1);
-}
+};
 
 /**
  * Force a text to look like a sentence
@@ -21,12 +21,12 @@ export const capitalizeFirstLetter = (line: string) => {
 export const sentencize = (line: string) => {
 	let r = line;
 	const lastCharacter = qstr.getLastCharacter(r);
-	if (!['.', '!', '?'].includes(lastCharacter)) {
-		r += '.';	
+	if (!['.', '!', '?', '&'].includes(lastCharacter)) {
+		r += '.';
 	}
 	r = qstr.capitalizeFirstLetter(r);
 	return r;
-}
+};
 
 /**
  * Returns the last character of a string.
@@ -37,5 +37,4 @@ export const sentencize = (line: string) => {
  */
 export const getLastCharacter = (line: string) => {
 	return line.charAt(line.length - 1);
-}
-
+};
