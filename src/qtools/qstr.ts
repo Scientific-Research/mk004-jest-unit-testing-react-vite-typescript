@@ -22,7 +22,8 @@ export const sentencize = (line: string) => {
 	let r = line;
 	const lastCharacter = qstr.getLastCharacter(r);
 	if (!['.', '!', '?', '&'].includes(lastCharacter)) {
-		r += '.';
+		// r += '.';
+		r = r + '.';
 	}
 	r = qstr.capitalizeFirstLetter(r);
 	return r;
